@@ -93,9 +93,9 @@ save_sesion($conn);
         }
         websocket.onmessage = function(e) {
             var data = JSON.parse(e.data)
-            if (data.senderId != "<?= $_SESSION['userId'] ?>") {
-                addTable(data.senderEmail, data.data);
-            }
+
+            addTable(data.senderEmail, data.data);
+
         };
 
         websocket.onerror = function(e) {
@@ -109,7 +109,7 @@ save_sesion($conn);
         function sendMessage() {
             var message = $('#message_text').val();
             websocket.send(message);
-            addTable("You", message)
+            
         }
 
         function addTable(sender, data) {
@@ -177,9 +177,7 @@ save_sesion($conn);
                         <div class="col-md-12">
                             <h5>Send Message</h5>
                         </div>
-                        <div class="col-md-12">
-                            <h5>All Messages</h5>
-                        </div>
+
                         <div class="col-md-12">
                             <div class="col-md-12">
                                 <textarea class="form-control" cols=30 rows=3 id="message_text"></textarea>
@@ -189,6 +187,9 @@ save_sesion($conn);
                     </div>
 
                     <div class="col-md-6 table-responsive">
+                        <div class="col-md-12">
+                            <h5>All Messages</h5>
+                        </div>
                         <table class="table table-striped">
                             <thead class="thead-dark">
                                 <tr>

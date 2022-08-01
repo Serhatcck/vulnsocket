@@ -91,7 +91,7 @@ class SocketEx:
             print("Handshake Finished: "+str(addr[1]))
 
             #sleep(1)
-            self.sendData(conn,'{"senderId":"0","senderName":"server","data":"Welcome '+user.userEmail+'"}')
+            self.sendData(conn,'{"senderId":"0","senderEmail":"server","data":"Welcome '+user.userEmail+'"}')
             # socket sonsuza kadar dinlenir.
             while True:
                 # data alınır.
