@@ -1,0 +1,88 @@
+1659377861264	geckodriver	INFO	Listening on 127.0.0.1:64329
+1659377861742	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "--marionette" "--remote-debugging-port" "64330" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\bga\\AppData\\Local\\Temp\\rust_mozprofileRKDCoe"
+1659377862031	Marionette	INFO	Marionette enabled
+1659377862035	Marionette	INFO	Listening on port 64344
+WebDriver BiDi listening on ws://localhost:64330
+Read port: 64344
+1659377862144	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\bga\\AppData\\Local\\Temp\\rust_mozprofileRKDCoe\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:64330/devtools/browser/80bc6ba1-c764-4a4b-8043-c6581bbc2a10
+1659377881009	geckodriver	INFO	Listening on 127.0.0.1:64372
+1659377881494	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "--marionette" "--remote-debugging-port" "64373" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\bga\\AppData\\Local\\Temp\\rust_mozprofiletSnuJr"
+1659377881783	Marionette	INFO	Marionette enabled
+1659377881787	Marionette	INFO	Listening on port 64381
+WebDriver BiDi listening on ws://localhost:64373
+Read port: 64381
+1659377881900	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\bga\\AppData\\Local\\Temp\\rust_mozprofiletSnuJr\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:64373/devtools/browser/c2df5e19-4817-4d46-921c-bd8794cdea27
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+1659377911631	geckodriver	INFO	Listening on 127.0.0.1:64418
+1659377912117	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "--marionette" "--remote-debugging-port" "64419" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\bga\\AppData\\Local\\Temp\\rust_mozprofileattnAZ"
+1659377912401	Marionette	INFO	Marionette enabled
+1659377912405	Marionette	INFO	Listening on port 64427
+WebDriver BiDi listening on ws://localhost:64419
+Read port: 64427
+1659377912528	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\bga\\AppData\\Local\\Temp\\rust_mozprofileattnAZ\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:64419/devtools/browser/66fc3f8f-83fc-4a0e-9ddd-2f3e76527176
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+1659377942622	geckodriver	INFO	Listening on 127.0.0.1:64467
+1659377943108	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "--marionette" "--remote-debugging-port" "64468" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\bga\\AppData\\Local\\Temp\\rust_mozprofilexlMFpV"
+1659377943393	Marionette	INFO	Marionette enabled
+1659377943397	Marionette	INFO	Listening on port 64478
+WebDriver BiDi listening on ws://localhost:64468
+Read port: 64478
+1659377943512	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\bga\\AppData\\Local\\Temp\\rust_mozprofilexlMFpV\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:64468/devtools/browser/e6300502-0509-440c-9d0b-f2739d6b54af
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.google.com."
+1659377946796	Marionette	INFO	Stopped listening on port 64478
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+[Parent 19552, Main Thread] WARNING: ContentParent: id=27d2af8bb00 - BlockShutdown: CanSend.: file /builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp:3595
+[Parent 19552, Main Thread] WARNING: ContentParent: id=27d2af8bb00 - ShutDownProcess: Sent shutdown message.: file /builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp:1799
+[Parent 19552, Main Thread] WARNING: ContentParent: id=27d2af8fc00 - BlockShutdown: CanSend.: file /builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp:3595
+[Parent 19552, Main Thread] WARNING: ContentParent: id=27d2af8fc00 - ShutDownProcess: Sent shutdown message.: file /builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp:1799
+[Parent 19552, Main Thread] WARNING: ContentParent: id=27d2af8bb00 - ShutDownProcess: Closing channel.: file /builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp:1834
+[Parent 19552, Main Thread] WARNING: ContentParent: id=27d2af8bb00 - RemoveShutdownBlockers: file /builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp:3697
+[Parent 19552, Main Thread] WARNING: ContentParent: id=27d2af8fc00 - ShutDownProcess: Closing channel.: file /builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp:1834
+[Parent 19552, Main Thread] WARNING: ContentParent: id=27d2af8fc00 - RemoveShutdownBlockers: file /builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp:3697
+1659377947728	Marionette	INFO	Stopped listening on port 64427
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+[Parent 9476, Main Thread] WARNING: ContentParent: id=1f9b7dbf900 - BlockShutdown: CanSend.: file /builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp:3595
+[Parent 9476, Main Thread] WARNING: ContentParent: id=1f9b7dbf900 - ShutDownProcess: Sent shutdown message.: file /builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp:1799
+[Parent 9476, Main Thread] WARNING: ContentParent: id=1f9b7dbf900 - ShutDownProcess: Closing channel.: file /builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp:1834
+[Parent 9476, Main Thread] WARNING: ContentParent: id=1f9b7dbf900 - RemoveShutdownBlockers: file /builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp:3697
+1659377949150	Marionette	INFO	Stopped listening on port 64381
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+[Parent 19508, Main Thread] WARNING: ContentParent: id=1a6e7670700 - BlockShutdown: CanSend.: file /builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp:3595
+[Parent 19508, Main Thread] WARNING: ContentParent: id=1a6e7670700 - ShutDownProcess: Sent shutdown message.: file /builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp:1799
+[Parent 19508, Main Thread] WARNING: ContentParent: id=1a6e7670700 - ShutDownProcess: Closing channel.: file /builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp:1834
+[Parent 19508, Main Thread] WARNING: ContentParent: id=1a6e7670700 - RemoveShutdownBlockers: file /builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp:3697
+1659377950476	Marionette	INFO	Stopped listening on port 64344
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+[Parent 9856, Main Thread] WARNING: ContentParent: id=150f8421700 - BlockShutdown: CanSend.: file /builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp:3595
+[Parent 9856, Main Thread] WARNING: ContentParent: id=150f8421700 - ShutDownProcess: Sent shutdown message.: file /builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp:1799
+[Parent 9856, Main Thread] WARNING: ContentParent: id=150f8421700 - ShutDownProcess: Closing channel.: file /builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp:1834
+[Parent 9856, Main Thread] WARNING: ContentParent: id=150f8421700 - RemoveShutdownBlockers: file /builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp:3697
+1659377963644	geckodriver	INFO	Listening on 127.0.0.1:64534
+1659377964136	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Firefox Developer Edition\\firefox.exe" "--marionette" "--remote-debugging-port" "64535" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\bga\\AppData\\Local\\Temp\\rust_mozprofilecwbZ8Y"
+1659377964408	Marionette	INFO	Marionette enabled
+1659377964411	Marionette	INFO	Listening on port 64543
+WebDriver BiDi listening on ws://localhost:64535
+Read port: 64543
+1659377964524	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\bga\\AppData\\Local\\Temp\\rust_mozprofilecwbZ8Y\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:64535/devtools/browser/cf7ee1af-3f4c-48e3-a2bf-c46cb93a1ffb
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: http://localhost."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://www.google.com."
+1659377976894	Marionette	INFO	Stopped listening on port 64543
+[Parent 4860, Main Thread] WARNING: ContentParent: id=15eec29e600 - BlockShutdown: CanSend.: file /builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp:3595
+[Parent 4860, Main Thread] WARNING: ContentParent: id=15eec29e600 - ShutDownProcess: Sent shutdown message.: file /builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp:1799
+[Parent 4860, Main Thread] WARNING: ContentParent: id=15eec29e600 - ShutDownProcess: Closing channel.: file /builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp:1834
+[Parent 4860, Main Thread] WARNING: ContentParent: id=15eec29e600 - RemoveShutdownBlockers: file /builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp:3697
