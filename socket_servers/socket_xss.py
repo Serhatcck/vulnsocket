@@ -47,10 +47,11 @@ class User:
     session = ""
     conn = None
     addr = None
-    def __init__(self,userId,userEmail,sessionId):
+    def __init__(self,userId,userEmail,sessionId,csrfToken):
         self.userId = userId
         self.userEmail = userEmail
         self.sessionId = sessionId
+        self.csrfToken = csrfToken
     
 
     def getUserInfo(self):
@@ -90,7 +91,7 @@ class SocketEx:
             print("Handshake Finished: "+str(addr[1]))
 
             #sleep(1)
-            self.sendData(conn,"Welcome "+user.userEmail)
+            self.sendData(conn,'{"senderId":"0","senderName":"server","data":"Welcome '+user.userEmail+'"}')
             # socket sonsuza kadar dinlenir.
             while True:
                 # data alınır.
@@ -98,13 +99,14 @@ class SocketEx:
                 if data:
                     print("received from: "+addr[0] +
                         " / received data: [%s]" % (data))
-                    reqData = self.createResp(data,user)
-                    for i in reqData:
-                        self.sendData(conn,i)
-
-                    # veri gönderilir
-                    #self.sendAllUsers(data)
+                    sendData = {}
+                    sendData['senderId'] = user.userId
+                    sendData['senderEmail'] = user.userEmail 
+                    sendData['data'] = data
+                    self.sendAllUsers(json.dumps(sendData))
         else:
+            #401 UNAUTHORİZED
+            conn.send(str.encode(self.UNAUTHORIZED_RESP))
             print("401 UNAUTHORIZED")
 
 
@@ -123,7 +125,7 @@ class SocketEx:
 
         else :
             return ["Your choise is wrong"]
-
+ 
 
     def sendAllUsers(self, data):
         for user in self.connectedUsers:
@@ -169,27 +171,36 @@ class SocketEx:
         data = data.decode('utf-8')
         # gelen istekteki HTTP header ları ayrıştırılır
         headers = self.splitHeaders(data)
+        
         cookies = self.splitCookie(headers["Cookie"])
         
         user = self.checkSessionId(cookies['PHPSESSID'])
         if user:
+            if user.csrfToken != headers['params']['token']:
+                return False
             # "Sec-WebSocket-Accept" değeri ile birlikte yanıt edilir
             respData = self.calcSecWebSocketAccept(headers["Sec-WebSocket-Key"])
             # yanıt socket üzerinden gönderilir
             conn.send(str.encode(respData))
+
+
+            user.conn = conn
+            self.iterator += 1
+            self.connectedUsers.append(user)
             return user
         else :
-            #404 UNAUTHORİZED
-            conn.send(str.encode(self.UNAUTHORIZED_RESP))
             return False
 
     def checkSessionId(self,sessionId):
         db = DB()
         sessions = db.select("SELECT * FROM sessions WHERE session_id='"+sessionId+"'")
-        print(sessions)
         if sessions:
             userinfo = json.loads(sessions[0][1])
-            user = User(userinfo['userId'],userinfo['userEmail'],sessions[0][0])
+            user = User(userinfo['userId'],userinfo['userEmail'],sessions[0][0],userinfo['token'])
+            
+            #delete token value
+            userinfo['token'] = ''
+            db.execute("UPDATE sessions SET session_val = '"+json.dumps(userinfo)+"' WHERE session_id = '"+sessionId+"'")
             return user
         else :
             return False    
@@ -207,13 +218,30 @@ class SocketEx:
         # Başlıklar satır satır bölünür
         headers = data.split("\r\n")
         headerDict = {}
+        firtsLine = headers[0].split(" ")
+        headerDict['method'] = firtsLine[0]
+        headerDict['httpVersion'] = firtsLine[2]
+        uri = firtsLine[1].split("?")
+        headerDict['uri'] = uri[0]
+        if len(uri) > 1:
+            #request have query string
+            headerDict['params'] = self.splitQuery(uri[1])
+
         for h in headers:
-            # her satır : göre ayrıştırılır
+            # each line split ":"
             parseHeader = h.split(":")
             if len(parseHeader) > 1:
-                headerDict[str(parseHeader[0]).strip()] = str(
-                    parseHeader[1]).strip()
+                headerDict[str(parseHeader[0]).strip()] = str(parseHeader[1]).strip()
         return headerDict
+
+    def splitQuery(self,query):
+        params = query.split("&")
+        paramDict = {}
+        for p in params:
+            parseParam = p.split("=")
+            paramDict[str(parseParam[0])] = str(parseParam[1])
+
+        return paramDict
 
     def splitCookie(self, data):
         cookies = data.split(" ")
@@ -248,4 +276,4 @@ class SocketEx:
 
 
 sc = SocketEx()
-sc.startServer('127.0.0.1', 8585)
+sc.startServer('127.0.0.1', 8587)

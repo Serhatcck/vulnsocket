@@ -127,11 +127,7 @@ class SocketEx:
         else :
             return ["Your choise is wrong"]
 
-    def createUser(self, user, conn, addr):
-        user.conn = conn
-        user.addr = addr
-        self.iterator += 1
-        self.connectedUsers.append(user)
+ 
 
     def sendAllUsers(self, data):
         for user in self.connectedUsers:
