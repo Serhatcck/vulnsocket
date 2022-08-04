@@ -97,7 +97,7 @@ if (!isset($_SESSION['userId'])) {
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <a href="xss.php" type="button" class="btn btn-sm btn-outline-secondary">Hack!</a>
-                                        <a type="button" class="btn btn-sm btn-outline-secondary">Secure!</a>
+                                        <a href="xss_secure.php" type="button" class="btn btn-sm btn-outline-secondary">Secure!</a>
                                     </div>
                                 </div>
                             </div>
