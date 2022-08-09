@@ -74,6 +74,7 @@ matplotlib==3.5.1
 more-itertools==8.12.0
 mpmath==0.0.0
 mysql-connector-python==8.0.30
+mysql-connector=2.2.9
 Naked==0.1.31
 numpy==1.21.5
 oauth2client==3.0.0

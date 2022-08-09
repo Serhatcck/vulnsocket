@@ -10,34 +10,7 @@ from requests import session
 import mysql.connector  # requirements
 import json
 import re
-
-
-class DB:
-    host = "localhost"
-    user = "root"
-    passwd = "root"
-    db = "web_socket"
-    connection = None
-
-    def __init__(self):
-        self.connection = mysql.connector.connect(
-            host=self.host,
-            user=self.user,
-            password=self.passwd,
-            database=self.db
-        )
-    
-    def select(self,query):
-        cursor = self.connection.cursor()
-        cursor.execute(query)
-        result = cursor.fetchall()   
-        cursor.close()     
-        return result
-    
-    def execute(self,query):
-        cursor = self.connection.cursor()
-        cursor.execute(query)
-        self.connection.commit()
+import DB
 
 class User:
     userId = ""
@@ -55,14 +28,14 @@ class User:
     
 
     def getUserInfo(self):
-        db = DB()
+        db = DB.DB()
         userInfo = db.select("Select * from users WHERE id="+str(self.userId))
         print(userInfo)
         self.userName = userInfo[0][2]
         self.userSurname = userInfo[0][3]
 
     def setPasswd(self,passwd):
-        db = DB()
+        db = DB.DB()
         hash = hashlib.sha256(passwd.encode())
 
         sql = "UPDATE users SET password = '"+hash.hexdigest()+"' WHERE id = '"+str(self.userId)+"'"
@@ -192,7 +165,7 @@ class SocketEx:
             return False
 
     def checkSessionId(self,sessionId):
-        db = DB()
+        db = DB.DB()
         sessions = db.select("SELECT * FROM sessions WHERE session_id='"+sessionId+"'")
         if sessions:
             userinfo = json.loads(sessions[0][1])
