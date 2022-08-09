@@ -4,4 +4,6 @@ require('database.php');
 
 $sqlQuery = file_get_contents('database.sql','r');
 
-$conn->query($sqlQuery);
+$err = $conn->exec($sqlQuery);
+
+print_r($err);

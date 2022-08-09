@@ -21,7 +21,8 @@ if ($_POST) {
     if (!empty($user)) {
         $_SESSION = [
             'userId' => $user['id'],
-            'userEmail' => $user['user_email']
+            'userEmail' => $user['user_email'],
+            'is_admin' => $user['is_admin']
         ];
         save_sesion($conn);
         header("location:index.php");

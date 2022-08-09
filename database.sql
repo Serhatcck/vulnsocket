@@ -22,10 +22,15 @@ SET time_zone = "+00:00";
 --
 
 -- --------------------------------------------------------
+DROP TABLE messages;
+DROP TABLE sessions;
+DROP TABLE users;
+
 
 --
 -- Table structure for table `messages`
 --
+
 
 CREATE TABLE `messages` (
   `id` int(11) NOT NULL,

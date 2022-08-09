@@ -7,7 +7,6 @@ import threading
 from time import sleep
 
 from requests import session
-import mysql.connector  # requirements
 import json
 import re
 import DB

@@ -9,9 +9,9 @@ if (!isset($_SESSION['userId'])) {
     exit();
 }
 $token = md5(uniqid(mt_rand(), true));
-$_SESSION['token'] = $token; 
+$_SESSION['token'] = $token;
 save_sesion($conn);
- 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,7 +49,7 @@ save_sesion($conn);
 <body>
 
     <script>
-        wsUri = 'ws://localhost:8586?token=<?=$token?>';
+        wsUri = 'ws://localhost:8586?token=<?= $token ?>';
         websocket = new WebSocket(wsUri);
         websocket.onopen = function(e) {
             writeStatus("CONNECTED");
@@ -126,34 +126,8 @@ save_sesion($conn);
     </script>
 
     <header>
-        <div class="collapse bg-dark" id="navbarHeader">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-8 col-md-7 py-4">
-                        <h4 class="text-white">About</h4>
-                        <p class="text-muted">Vulnerable WebSocket Application.</p>
-                    </div>
-                    <div class="col-sm-4 offset-md-1 py-4">
-                        <h4 class="text-white">Contact</h4>
-                        <ul class="list-unstyled">
-                            <li><a href="https://www.linkedin.com/in/serhatcck/" target="_blank" class="text-white">Linkedin</a></li>
-                            <li><a href="https://github.com/Serhatcck" target="_blank" class="text-white">Github</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="navbar navbar-dark bg-dark box-shadow">
-            <div class="container d-flex justify-content-between">
-                <a href="/vulnsocket" class="navbar-brand d-flex align-items-center">
+        <?php include('header.php'); ?>
 
-                    <strong>WebSocket - CSWSH</strong>
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-        </div>
     </header>
     <main role="main">
 
@@ -161,7 +135,8 @@ save_sesion($conn);
             <div class="container">
                 <h1 class="jumbotron-heading">Exploiting WebSocket Vulnerabilities</h1>
                 <p class="lead text-muted">This is a secure WebSocket.</p>
-                Start Server: <pre>python3 socket_servers/socket_cswsh_secure.py </pre>
+                Start Server:
+                <pre>python3 socket_servers/socket_cswsh_secure.py </pre>
             </div>
         </section>
 

@@ -18,45 +18,15 @@ if (!isset($_SESSION['userId'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Socket</title>
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <script src="assets/javascript/jquery.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
     <header>
-        <div class="collapse bg-dark" id="navbarHeader">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-8 col-md-7 py-4">
-                        <h4 class="text-white">About</h4>
-                        <p class="text-muted">Vulnerable WebSocket Application.</p>
-                    </div>
-                    <div class="col-sm-4 offset-md-1 py-4">
-                        <h4 class="text-white">Contact</h4>
-                        <ul class="list-unstyled">
-                            <li><a href="https://www.linkedin.com/in/serhatcck/" target="_blank" class="text-white">Linkedin</a></li>
-                            <li><a href="https://github.com/Serhatcck" target="_blank" class="text-white">Github</a></li>
-                            
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="navbar navbar-dark bg-dark box-shadow">
-            <div class="container d-flex justify-content-between">
-                <a href="#" class="navbar-brand d-flex align-items-center">
+        <?php include('header.php'); ?>
 
-                    <strong>WebSocket</strong>
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-            <a href="logout.php"  class="navbar-brand d-flex align-items-center">LogOut</a>
-            
-
-        </div>
     </header>
     <main role="main">
 
