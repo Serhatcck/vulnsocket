@@ -52,6 +52,18 @@ If you get an error in cswsh_exploit.py, check:
 * Are the selenium drivers in the Selenium Driver folder correct?
 * Do you install selenium in python3 ?
 
-### Walkthrough
+### Exploitation
+#### Exploit CSWSH
+1. Create a html/javascript poc
+2. Serve this file in server(example: http://localhost/poc.html)
+3. Exploit CSWSH with exploitation code:
 
+```python
+python3 cswsh_exploit.py {your file address}
+python3 cswsh_exploit.py http://localhost/poc.html
+```
+4. Hijack admin account
+
+### Walkthrough
+Very soon...
 
