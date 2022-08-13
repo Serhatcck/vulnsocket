@@ -427,3 +427,4 @@ console.warn: LoginRecipes: "Falling back to a synchronous message for: http://l
 [Parent 17848, Main Thread] WARNING: ContentParent: id=1f6980a0000 - ShutDownProcess: Sent shutdown message.: file /builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp:1799
 [Parent 17848, Main Thread] WARNING: ContentParent: id=1f6980a0000 - ShutDownProcess: Closing channel.: file /builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp:1834
 [Parent 17848, Main Thread] WARNING: ContentParent: id=1f6980a0000 - RemoveShutdownBlockers: file /builds/worker/checkouts/gecko/dom/ipc/ContentParent.cpp:3697
+1660396758194	geckodriver	INFO	Listening on 127.0.0.1:53180
