@@ -36,7 +36,8 @@ if ($_POST) {
             $last_id = $conn->lastInsertId();
             $_SESSION = [
                 'userId' => $last_id,
-                'userEmail' => $userEmail
+                'userEmail' => $userEmail,
+                'is_admin' => false
             ];
             save_sesion($conn);
             header("location:index.php");
