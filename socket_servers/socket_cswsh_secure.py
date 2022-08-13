@@ -144,7 +144,7 @@ class SocketEx:
     def endHandshake(self, conn):
         data = conn.recv(1024)
         data = data.decode('utf-8')
-        # gelen istekteki HTTP header ları ayrıştırılır
+        # HTTP headers in the incoming request are parsed
         headers = self.splitHeaders(data)
         
         cookies = self.splitCookie(headers["Cookie"])
@@ -153,9 +153,9 @@ class SocketEx:
         if user:
             if user.csrfToken != headers['params']['token']:
                 return False
-            # "Sec-WebSocket-Accept" değeri ile birlikte yanıt edilir
+            # "Sec-WebSocket-Accept"
             respData = self.calcSecWebSocketAccept(headers["Sec-WebSocket-Key"])
-            # yanıt socket üzerinden gönderilir
+            # response is sent over socket
             conn.send(str.encode(respData))
             return user
         else :
