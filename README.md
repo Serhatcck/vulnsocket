@@ -65,5 +65,5 @@ python3 cswsh_exploit.py http://localhost/poc.html
 4. Hijack admin account
 
 ### Walkthrough
-Very soon...
+https://medium.com/@serhatdbs/vulnerable-websocket-server-e44bee5e0b5f
 
